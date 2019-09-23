@@ -21,6 +21,7 @@ def run(self):
 
 def echo():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    #选择 AF_INET 的目的就是使用 IPv4 进行通信。因为 IPv4 使用 32 位地址，相比 IPv6 的 128 位来说，计算更快，便于用于局域网通信。
     sock.bind(('127.0.0.1', 5555))
     sock.listen(10)
     while True:
